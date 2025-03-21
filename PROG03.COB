@@ -1,28 +1,34 @@
 
        IDENTIFICATION DIVISION.
-       PROGRAM-ID. PROG4.
+       PROGRAM-ID. PROG03.
       *======================================
       *== AUTOR: MATHEUS          EMPRESA: X
       *== OBJETIVO:
       *== DATA = 21/03/2025
-      *== OBSERVA«OES: GRAVA«√O DE REGISTRO
+      *== OBSERVA√áOES: ACESSANDO TODOS OS DADOS DE UM ARQUIVO.DAT
       *======================================
 
        ENVIRONMENT DIVISION.
        CONFIGURATION SECTION.
        INPUT-OUTPUT SECTION.
+       
+      *Define o arquivo e o seu Status
        FILE-CONTROL.
            SELECT CLIENTES ASSIGN TO "C:\cobol\SMN5\CLIENTE.DAT."
            FILE STATUS IS FS-CLIENTES.
 
        DATA DIVISION.
+       
+      *Descreve a estrutura do arquivo
        FILE SECTION.
        FD CLIENTES.
        01 REG-CLIENTES.
            05 REG-ID       PIC 9(04).
            05 REG-NOME     PIC X(20).
            05 REG-TELEFONE PIC 9(11).
-
+           
+      *-----------VARI√ÅVEIS----------------
+       
        WORKING-STORAGE              SECTION.
        01 WRK-CLIENTES.
            05 WRK-ID       PIC 9(04).
@@ -39,6 +45,7 @@
            PERFORM 0300-FINALIZAR.
            GOBACK.
 
+      *----- Abre o arquivo para leitura e verifica se houve erro
        0100-INICIALIZAR                SECTION.
            OPEN INPUT CLIENTES.
            IF FS-CLIENTES EQUAL 35
@@ -49,6 +56,7 @@
              DISPLAY "ARQUIVO OK"
            END-IF.
 
+      *----- L√™ e exibe todos os registros do arquivo
        0200-PROCESSAR                  SECTION.
 
            READ CLIENTES
@@ -65,7 +73,7 @@
                DISPLAY "ARQUIVO VAZIO"
              END-IF.
 
-
+      *----- Fecha o arquivo e finaliza o programa
        0300-FINALIZAR                  SECTION.
            DISPLAY "FIM DE PROGRAMA"
            CLOSE CLIENTES.
@@ -75,4 +83,4 @@
            GOBACK.
 
 
-       END PROGRAM PROG4.
+       END PROGRAM PROG03.
