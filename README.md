@@ -59,6 +59,3 @@ O arquivo **CLIENTE.DAT** contém os seguintes campos para cada cliente:
 
 Este projeto é de uso pessoal e educacional. Não há licença específica, mas você pode usar o código como base para aprender mais sobre COBOL e manipulação de arquivos.
 
----
-
-Esse README é mais adequado para o seu GitHub, dando contexto sobre o projeto e como executá-lo. Não se esqueça de atualizar o caminho do arquivo ou outros detalhes específicos do seu ambiente, se necessário.
