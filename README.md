@@ -16,7 +16,6 @@ Este projeto tem como objetivo demonstrar a leitura e a manipulação de arquivo
 ## Autor
 
 - **Nome**: Matheus dos Santos
-- **Empresa**: X
 - **Data de Criação**: 21/03/2025
 
 ## Estrutura do Arquivo
